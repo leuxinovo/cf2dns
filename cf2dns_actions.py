@@ -39,7 +39,7 @@ def get_optimization_ip():
     try:
         headers = headers = {'Content-Type': 'application/json'}
         data = {"key": KEY, "type": "v4" if RECORD_TYPE == "A" else "v6"}
-        response = requests.post('https://www.wetest.vip/api/cf2dns/get_cloudflare_ip', json=data, headers=headers)
+        response = requests.post('https://ipdb.api.030101.xyz/?type=cfv4;cfv6&proxy', json=data, headers=headers)
         if response.status_code == 200:
             return response.json()
         else:
